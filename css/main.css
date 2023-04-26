@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --color: #eeee;
+  --scolor: #393e46;
+  --tcolor: #00848b;
+  --bgcolor: #222831;
+  --font: "Pathway Extreme";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: contain;
+  color: var(--color);
+}
+
+::selection {
+  background-color: var(--scolor);
+  color: var(--tcolor);
+}
+
+body {
+  font-size: 10px;
+  background-color: var(--bgcolor);
+}
+
+#menu {
+  background-color: var(--tcolor);
+  height: 5rem;
+  width: 100%;
+  border-bottom: 5px solid #006f75;
+  display: flex;
+  align-items: center;
+}
+
+#menu a {
+  color: var(--color);
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 10px;
+}
+
+#menu a:hover {
+  color: white;
+}
+
+#image_logo {
+  width: 10.9rem;
+  pointer-events: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  #menu {
+    display: block;
+  }
+
+  #image_logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  #menu_child {
+    position: absolute;
+    top: 5rem;
+    background-color: var(--tcolor);
+    height: calc(100vh - 5rem);
+    width: 100%;
+    left: -100%;
+    transition: all 0.5s;
+  }
+
+  #menu_child a {
+    display: block;
+    padding: 20px 0px;
+    text-align: center;
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  #menu_child a:hover {
+    background-color: #00a9b1;
+  }
+
+  #check:checked ~ #menu_child {
+    left: 0;
+  }
+
+  #labelmenu img {
+    width: 2rem;
+    position: absolute;
+    left: 1rem;
+    top: 1.2rem;
+    cursor: pointer;
+  }
+}
