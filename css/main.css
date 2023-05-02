@@ -55,6 +55,7 @@ body {
 #image_logo {
   width: 10.9rem;
   pointer-events: none;
+  user-select: none;
 }
 
 #check {
