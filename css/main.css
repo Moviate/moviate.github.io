@@ -25,6 +25,7 @@
 
 img {
   user-select: none;
+  border-radius: 9px;
 }
 
 body {
@@ -45,11 +46,20 @@ body {
   color: var(--color);
   font-size: 1rem;
   font-weight: 800;
+  background-color: none;
   margin: 10px;
+  transition: all 0.2s;
+  box-shadow: none;
 }
 
 #menu a:hover {
   color: white;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1),
+               0 0 2px rgba(255, 255, 255, 0.1),
+               0 0 3px rgba(255, 255, 255, 0.1),
+               0 0 4px rgba(255, 255, 255, 0.1),
+               0 0 5px rgba(255, 255, 255, 0.1),
+               0 0 6px rgba(255, 255, 255, 0.1);
 }
 
 #image_logo {
@@ -88,20 +98,41 @@ body {
 
 #maincontent {
   margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .main_child {
   margin: 10px 4px;
-  width: 300px;
-  height: max-content;
+  width: 340px;
+  border-radius: 9px;
+  height: 340px;
   font-size: 0.8rem;
   text-align: center;
   transition: 0.5s ease;
   border: 0.2rem solid transparent;
   padding: 0.2rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
 }
+
+.main_child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%; /* adjust as needed */
+  background: linear-gradient(to bottom, transparent, #222831);
+  pointer-events: none;
+}
+
 
 .main_child img {
   width: 100%;
@@ -111,6 +142,10 @@ body {
 
 .main_child:hover {
   background-color: var(--scolor);
+}
+
+h2 {
+  margin-bottom: 5px;
 }
 
 @media (max-width: 800px) {
