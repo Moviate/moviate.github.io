@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css");
 * {
   font-family: "Pathway Extreme";
   -webkit-tap-highlight-color: transparent;
@@ -22,11 +22,11 @@ body * {
 
 #menu {
   background-color: rgb(30, 30, 30);
-  height: 80px;
+  height: auto;
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 50px 0.5px rgba(255, 255, 255, 0.200);
-  border-bottom: 0.4px solid rgba(255, 255, 255, 0.150);
+  box-shadow: 0px 0px 50px 0.5px rgba(255, 255, 255, 0.2);
+  border-bottom: 0.4px solid rgba(255, 255, 255, 0.15);
   margin-bottom: 50px;
 }
 
@@ -35,13 +35,21 @@ body * {
   color: rgb(255, 255, 255);
 }
 
+.logomain {
+  width: 60px;
+  margin: 0 10px;
+}
+
 .menuitems {
   display: flex;
 }
 
 .menuitems a {
   margin: 10px;
-  border-bottom: 0.5px solid white;
+}
+
+.menuitems a:hover {
+  opacity: 0.7;
 }
 
 @media (max-width: 800px) {
@@ -52,7 +60,8 @@ body * {
     overflow: auto;
     white-space: nowrap;
   }
-  .menulogo {
-    text-align: center;
+  .logomain {
+    margin: auto;
+    display: block;
   }
 }
